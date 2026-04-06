@@ -1,6 +1,7 @@
 {
-  "buildCommand": "cd apps/miniapp && pnpm build",
-  "outputDirectory": "apps/miniapp/.next",
+  "buildCommand": "pnpm build",
+  "outputDirectory": ".next",
   "framework": "nextjs",
-  "installCommand": "cd apps/miniapp && pnpm install"
+  "installCommand": "pnpm install",
+  "rootDirectory": "apps/miniapp"
 }

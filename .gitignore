@@ -6,3 +6,4 @@ dist
 *.log
 .DS_Store
 wallet-addresses.json
+VERCEL.md
