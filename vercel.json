@@ -1,8 +1,6 @@
 {
-  "buildCommand": "pnpm --filter miniapp build",
+  "buildCommand": "cd apps/miniapp && pnpm build",
   "outputDirectory": "apps/miniapp/.next",
   "framework": "nextjs",
-  "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/:path*" }
-  ]
+  "installCommand": "cd apps/miniapp && pnpm install"
 }
