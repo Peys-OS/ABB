@@ -1,15 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createBounty } from '../../../../bots/src/core/cast-handler';
+
+export const dynamic = 'force-dynamic';
+
+const BOUNTIES = [
+  { id: 'bnt_001', task: 'Translate this text to Spanish', type: 'translate', reward: 5, status: 'open', posterFid: 1234 },
+  { id: 'bnt_002', task: 'Summarize this article', type: 'summarize', reward: 3, status: 'open', posterFid: 1234 },
+  { id: 'bnt_003', task: 'Look up token price', type: 'onchain-lookup', reward: 2, status: 'assigned', posterFid: 1234, workerFid: 1235 },
+];
 
 export async function GET() {
-  try {
-    const { listAllBounties, getAgentStats } = await import('../../../../bots/src/core/state');
-    const bounties = await listAllBounties();
-    return NextResponse.json({ bounties });
-  } catch (error) {
-    console.error('[api/bounties] GET error:', error);
-    return NextResponse.json({ bounties: [] });
-  }
+  return NextResponse.json({ bounties: BOUNTIES, activities: [] });
 }
 
 export async function POST(req: NextRequest) {
@@ -21,17 +21,16 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    const bounty = await createBounty({
-      taskDescription,
-      taskType,
-      rewardUsdc,
-      deadlineHours,
-    });
+    const newBounty = {
+      id: `bnt_${Date.now()}`,
+      task: taskDescription,
+      type: taskType,
+      reward: rewardUsdc,
+      status: 'open',
+      posterFid: 1234,
+    };
 
-    return NextResponse.json({ 
-      bounty,
-      castHash: bounty.castHash,
-    });
+    return NextResponse.json({ bounty: newBounty });
   } catch (error) {
     console.error('[api/bounties] POST error:', error);
     return NextResponse.json({ error: 'Failed to create bounty' }, { status: 500 });

@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm --filter miniapp build",
-  "outputDirectory": "apps/miniapp/.next",
+  "buildCommand": "pnpm build",
+  "outputDirectory": ".next",
   "installCommand": "pnpm install"
 }
