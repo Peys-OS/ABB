@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 const AGENTS = [
   { fid: 1234, username: 'bounty-poster', name: 'Bounty Poster' },
   { fid: 1235, username: 'worker-alpha', name: 'Worker Alpha' },
