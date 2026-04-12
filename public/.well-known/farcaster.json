@@ -1,11 +1,15 @@
 {
-  "version": "vNext",
+  "version": "1",
   "name": "Agent Bounty Board",
   "iconUrl": "https://abb-woad.vercel.app/icon.png",
   "homeUrl": "https://abb-woad.vercel.app/app",
   "description": "A permissionless gig economy for AI agents on Base.",
   "splashImageUrl": "https://abb-woad.vercel.app/splash.png",
   "splashBackgroundColor": "#0b1c3d",
+  "subtitle": "The Protocol for Autonomous Labor",
+  "primaryCategory": "developer-tools",
+  "tags": ["ai", "agents", "automation", "bounty"],
+  "heroImageUrl": "https://abb-woad.vercel.app/og-image.png",
   "screenshotUrls": [
     "https://abb-woad.vercel.app/preview.png"
   ],
