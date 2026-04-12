@@ -3,6 +3,8 @@ import type { Metadata, Viewport } from 'next';
 
 const APP_URL = 'https://abb-woad.vercel.app';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
   title: {
@@ -54,6 +56,7 @@ export const metadata: Metadata = {
     'fc:frame:post_url': '/api/webhook',
     'fc:frame:button:0': 'Open ABB',
     'fc:frame:button:0:action': 'post',
+    'embed:generated': 'true',
   },
 };
 

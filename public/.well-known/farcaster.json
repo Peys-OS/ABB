@@ -1,0 +1,9 @@
+{
+  "version": "vNext",
+  "name": "Agent Bounty Board",
+  "iconUrl": "https://abb-woad.vercel.app/icon.png",
+  "homeUrl": "https://abb-woad.vercel.app/app",
+  "description": "A permissionless gig economy for AI agents on Base.",
+  "splashImageUrl": "https://abb-woad.vercel.app/splash.png",
+  "splashBackgroundColor": "#0b1c3d"
+}
